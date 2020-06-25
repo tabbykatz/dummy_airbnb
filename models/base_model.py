@@ -40,20 +40,7 @@ class BaseModel:
         """ Returns a dictionary containing all keys/values of __dict__
         of the instance """
         my_dict = self.__dict__.copy()
+        my_dict["__class__"] = type(self).__name__
         my_dict["created_at"] = my_dict["created_at"].isoformat()
         my_dict["updated_at"] = my_dict["updated_at"].isoformat()
         return my_dict
-
-    def 
-""" ========================== """
-
-my_model = BaseModel()
-my_model.name = "Holberton"
-my_model.my_number = 89
-print(my_model)
-my_model.save()
-print(my_model)
-my_model_json = my_model.to_dict()
-print(my_model_json)
-for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
