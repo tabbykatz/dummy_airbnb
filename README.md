@@ -67,8 +67,9 @@ This allows the storage to be reloaded automatically at initialization, which re
 All the code is tested with the **unittest** module.
 The test for the classes are in the [test_models](./tests/test_models/) folder.
 
+
 ## Authors
 
-* **Cynthia Taylor** - [github](https://github.com/cg-taylor) - [email]()
-* **Zac Woll** - [github](https://github.com/zacwoll) - [email]()
-* **Tabitha O'Melay** - [github](https://github.com/tabbykatz) - [email](1346@holbertonschool.com)
+* **Cynthia Taylor** - [github](https://github.com/cg-taylor) - [linkedin](https://www.linkedin.com/in/cynthia-taylor/) - [twitter](https://twitter.com/wholockwars)
+* **Zac Woll** - [github](https://github.com/zacwoll) - [linkedin](https://www.linkedin.com/in/zachary-woll-52021a1a1/) - [twitter](https://twitter.com/ZakWoll)
+* **Tabitha O'Melay** - [github](https://github.com/tabbykatz) - [linkedin](https://www.linkedin.com/in/tabbykatz/) - [twitter](https://twitter.com/tabby__katz)
