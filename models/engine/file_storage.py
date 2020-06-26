@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """ File Storage module """
 from datetime import datetime
-# from json import dumps, loads
 import os
 import json
 
