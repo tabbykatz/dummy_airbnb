@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """ Base Class """
-from json import dumps, loads
 import uuid
 from datetime import datetime
 from models import storage
+
 
 tf = "%Y-%m-%dT%H:%M:%S.%f" #time format
 
