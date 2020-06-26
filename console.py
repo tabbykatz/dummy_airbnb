@@ -17,6 +17,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             inst = BaseModel()
+            inst.save()
             print(inst.id)
 
     def do_EOF(self, line):
