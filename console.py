@@ -11,6 +11,14 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def do_create(self, line):
+        """Creates a new instance. """
+        if line == "" or line is None:
+            print("** class name missing **")
+        else:
+            inst = BaseModel()
+            print(inst.id)
+
     def do_EOF(self, line):
         """End-of-file input exits console. """
         print()
