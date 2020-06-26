@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ File Storage module """
 from datetime import datetime
-from json import dumps, loads
+import json
 import os
 
 
@@ -24,7 +24,7 @@ class FileStorage:
         with open(FileStorage.__file_path, "w") as f:
             my_dict = {key: val.to_dict() for key, val in
                  FileStorage.__objects.items()}
-            json.dump(my_dict, f)
+            json.dumps(my_dict, f)
 
     def reload(self):
         """ deserializes the JSON file to __objects (only if the JSON file
@@ -32,7 +32,9 @@ class FileStorage:
         if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r") as f:
-            obj_dict = json.load(f)
+            print(f.read())
+            print("EOF")
+            obj_dict = json.loads(f)
             from models.base_model import BaseModel
             obj_dict = {k: BaseModel(**v) for k, v in obj_dict.items()}
             FileStorage.__objects = obj_dict
