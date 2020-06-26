@@ -11,6 +11,12 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def do_all(self, line):
+        """ Displays all instances, optionally, display all of a class of
+        instances."""
+        obj_list = [str(obj) for key, obj in storage.all().items()]
+        print(obj_list)
+
     def do_create(self, line):
         """Creates a new instance. """
         if line == "" or line is None:
