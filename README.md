@@ -67,6 +67,11 @@ This allows the storage to be reloaded automatically at initialization, which re
 All the code is tested with the **unittest** module.
 The test for the classes are in the [test_models](./tests/test_models/) folder.
 
+## Shoutouts
+
+This project was made possible through the superior power of Vim
+This README created in stackedit.io
+This pandemic is the worst
 
 ## Authors
 
