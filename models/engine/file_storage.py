@@ -23,7 +23,7 @@ class FileStorage:
         with open(FileStorage.__file_path, "w") as f:
             my_dict = {key: val.to_dict() for key, val in
                  FileStorage.__objects.items()}
-            json.dumps(my_dict, f)
+            json.dump(my_dict, f)
 
     def reload(self):
         """ deserializes the JSON file to __objects (only if the JSON file
@@ -31,7 +31,7 @@ class FileStorage:
         if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r") as f:
-            obj_dict = json.loads(f)
+            obj_dict = json.load(f)
             from models.base_model import BaseModel
             obj_dict = {k: BaseModel(**v) for k, v in obj_dict.items()}
             FileStorage.__objects = obj_dict
