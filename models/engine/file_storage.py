@@ -32,9 +32,10 @@ class FileStorage:
         if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r") as f:
-            print(f.read())
-            print("EOF")
-            obj_dict = json.loads(f)
+            try:
+                obj_dict = json.loads(f)
+            except:
+                return
             from models.base_model import BaseModel
             obj_dict = {k: BaseModel(**v) for k, v in obj_dict.items()}
             FileStorage.__objects = obj_dict
