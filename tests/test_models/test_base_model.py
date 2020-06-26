@@ -26,5 +26,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(rat, BaseModel)
         self.assertTrue(issubclass(type(rat), BaseModel))
 
+    def test_init_no_args(self):
+        """init no args please"""
+        with self.assertRaises(TypeError) as e:
+            BaseModel.__init__()
+        msg = "__init__() missing 1 required positional argument: 'self'"
+        self.assertEqual(str(e.exception), msg)
+
+
 if __name__ == '__main__':
     unittest.main()
