@@ -22,8 +22,20 @@ class FileStorage:
     def classes(self):
         """ Returns a dict of all valid classes """
         from models.base_model import BaseModel
+        from models.state import State
+        from models.city import City
+        from models.place import Place
+        from models.review import Review
+        from models.amenity import Amenity
+        # from models.User import User
 
-        classes = {"BaseModel": BaseModel}
+        classes = {"BaseModel": BaseModel,
+                   "State": State,
+                   "City": City,
+                   "Amenity": Amenity,
+                   "Place": Place,
+                   "Review": Review}
+            # "User": User when that's ready
         return classes
 
     def save(self):
@@ -43,7 +55,7 @@ class FileStorage:
                 obj_dict = json.load(f)
             except:
                 return
-            from models.base_model import BaseModel
-            obj_dict = {k: BaseModel(**v) for k, v in obj_dict.items()}
+            obj_dict = {k: self.classes()[v["__class__"]](**v) for k, v in
+                        obj_dict.items()}
             FileStorage.__objects = obj_dict
 

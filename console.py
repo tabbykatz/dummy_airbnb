@@ -12,6 +12,23 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def do_show(self, line):
+        """ Prints an instance by id """
+        if line is "" or line is None:
+            print("** class name missing **")
+        else:
+            terms = line.split(' ')
+            if terms[0] not in storage.classes():
+                print("** class doesn't exist **")
+            elif len(terms) < 2:
+                print("** instance id missing **")
+            else:
+                key = "{}.{}".format(terms[0], terms[1])
+                if key not in storage.all():
+                    print("** no instance found **")
+                else:
+                    print(storage.all()[key])
+
     def do_destroy(self, line):
         """ Deletes an instance based on the class name and id """
         if line is "" or line is None:
@@ -19,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             terms = line.split(' ')
             if terms[0] not in storage.classes():
-                print("** cllass doesn't exist **")
+                print("** class doesn't exist **")
             elif len(terms) < 2:
                 print("** instance id missing **")
             else:
@@ -39,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 obj_list = [str(obj) for key, obj in storage.all().items() if
-                            type(obj.__name__ == terms[0])]
+                            type(obj).__name__ == terms[0]]
                 print(obj_list)
         else:
             obj_list = [str(obj) for key, obj in storage.all().items()]
@@ -49,8 +66,10 @@ class HBNBCommand(cmd.Cmd):
         """Creates a new instance. """
         if line == "" or line is None:
             print("** class name missing **")
+        elif line not in storage.classes():
+            print("** class doesn't exist **")
         else:
-            inst = BaseModel()
+            inst = storage.classes()[line]()
             inst.save()
             print(inst.id)
 
