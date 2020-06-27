@@ -5,12 +5,43 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 import json
+import shlex
 
 
 class HBNBCommand(cmd.Cmd):
     """ Class for the console """
 
     prompt = "(hbnb) "
+
+    def do_update(self, line):
+        """ Update an instance based on class name and id. """
+        if line == "" or line is None:
+            print("** class name missing **")
+            return
+        terms = shlex.split(line, posix=False)
+        if terms[0] not in storage.classes():
+            print("** class doesn't exit **")
+            return
+        elif len(terms) < 2:
+            print("** instance id missing **")
+            return
+        #ok so we have a class and an instance id
+        # does key exist
+        key = "{}.{}".format(terms[0], terms[1])
+        if key not in storage.all():#all().keys()?
+            print("** no instance found **")
+            return
+
+        if len(terms) < 3:
+            print("** attribute missing **")
+            return
+        elif len(terms) < 4:
+            print("** value missing **")
+            return
+        terms[3] = terms[3].strip("\"")
+        storage.all()[key].__dict__[terms[2]] = terms[3]
+        storage.save()
+
 
     def do_show(self, line):
         """ Prints an instance by id """
