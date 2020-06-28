@@ -22,10 +22,26 @@ class HBNBCommand(cmd.Cmd):
         if cl_name not in storage.classes():
             print("** class doesn't exist **")
             return
-        if cmd == "count":
+
+        if cmd == "all":
+            self.do_all(cl_name)
+
+        elif cmd == "count":
             count = sum(1 for k, v in storage.all().items() if
                         v.to_dict()["__class__"] == cl_name)
             print(count)
+
+        elif cmd == "show":
+            self.do_show(cl_name + " " + term.strip("\""))
+
+        elif cmd == "destroy":
+            self.do_destroy(cl_name + " " + term.strip("\""))
+
+        elif cmd == "update":
+            pass
+
+        else:
+            super().default(line)
 
     def do_update(self, line):
         """ Update an instance based on class name and id. """
