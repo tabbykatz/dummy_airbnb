@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 from models import storage
 import json
 import shlex
-
+import re
 
 class HBNBCommand(cmd.Cmd):
     """ Class for the console """
@@ -38,8 +38,21 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(cl_name + " " + term.strip("\""))
 
         elif cmd == "update":
-            pass
-
+            # if starts with 'id, {}', then split into id and dict
+            if re.match('"[^"]+", {.+}', term):
+                term = term.replace("\'", "\"")
+                term_dict = json.loads(term.split(", ", 1)[1])
+                term_id = cl_name + "." + term.split(", ")[0].strip("\"")
+                if term_id not in storage.all().keys():
+                    print("** no instance found **")
+                    return
+                for k, v in term_dict.items():
+                    setattr(storage.all()[term_id], k, v)
+            # else update at id the attribute with new_value
+            else:
+                terms = term.split(", ")
+                self.do_update(cl_name + " " + terms[0].strip("\"") + " " +
+                               terms[1].strip("\"") + " " + terms[2])
         else:
             super().default(line)
 
