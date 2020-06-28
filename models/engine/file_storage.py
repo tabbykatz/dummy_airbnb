@@ -2,9 +2,12 @@
 """ File Storage module """
 from datetime import datetime
 <<<<<<< HEAD
+<<<<<<< HEAD
 import json
 =======
 >>>>>>> cynthia_working
+=======
+>>>>>>> 8fc030dbbf10fd4555599549edb02fe0546a1348
 import os
 import json
 
@@ -15,10 +18,14 @@ class FileStorage:
 
     def all(self):
 <<<<<<< HEAD
+<<<<<<< HEAD
         """ Returns the dictionary __objects"""
 =======
         """ Returns the dictionary __objects """
 >>>>>>> cynthia_working
+=======
+        """ Returns the dictionary __objects """
+>>>>>>> 8fc030dbbf10fd4555599549edb02fe0546a1348
         return FileStorage.__objects
 
     def new(self, obj):
@@ -34,15 +41,15 @@ class FileStorage:
         from models.place import Place
         from models.review import Review
         from models.amenity import Amenity
-        # from models.User import User
+        from models.user import User
 
         classes = {"BaseModel": BaseModel,
                    "State": State,
                    "City": City,
                    "Amenity": Amenity,
                    "Place": Place,
-                   "Review": Review}
-            # "User": User when that's ready
+                   "Review": Review,
+                   "User": User}
         return classes
 
     def save(self):

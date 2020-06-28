@@ -3,7 +3,10 @@
 import uuid
 from datetime import datetime
 from models import storage
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8fc030dbbf10fd4555599549edb02fe0546a1348
 
 tf = "%Y-%m-%dT%H:%M:%S.%f" #time format
 
