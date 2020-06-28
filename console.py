@@ -13,6 +13,20 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
+    def default(self, line):
+        """ Handle class.cmd(args) commands """
+        cl_name = line.split(".")[0]
+        cmd = line.split(".")[1].split("(")[0]
+        term = line.split("(")[1][:-1]
+
+        if cl_name not in storage.classes():
+            print("** class doesn't exist **")
+            return
+        if cmd == "count":
+            count = sum(1 for k, v in storage.all().items() if
+                        v.to_dict()["__class__"] == cl_name)
+            print(count)
+
     def do_update(self, line):
         """ Update an instance based on class name and id. """
         if line == "" or line is None:
