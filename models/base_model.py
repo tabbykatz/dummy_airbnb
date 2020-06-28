@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """ Base Class """
-from json import dumps, loads
 import uuid
 from datetime import datetime
 from models import storage
@@ -10,15 +9,15 @@ tf = "%Y-%m-%dT%H:%M:%S.%f" #time format
 class BaseModel:
     """ Base Class """
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         """ init a Base Instance """
 
-        if kwargs:
+        if kwargs is not None and kwargs != {}:
             for key in kwargs:
                 if key == "created_at":
                     self.__dict__["created_at"] = datetime.strptime(
                         kwargs["created_at"], tf)
-                if key == 'updated_at':
+                elif key == 'updated_at':
                     self.__dict__["updated_at"] = datetime.strptime(
                         kwargs["updated_at"], tf)
                 else:
