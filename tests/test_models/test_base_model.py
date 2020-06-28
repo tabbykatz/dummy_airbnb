@@ -86,7 +86,7 @@ class TestBaseModel(unittest.TestCase):
         """send to dict"""
         rat = BaseModel()
         rat.name = "labrat"
-        b.age = 100
+        rat.age = 100
         thing = rat.to_dict()
         self.assertEqual(thing["id"], rat.id)
         self.assertEqual(thing["__class__"], type(rat).__name__)

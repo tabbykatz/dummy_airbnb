@@ -1,15 +1,9 @@
 #!/usr/bin/env python3
 """ File Storage module """
 from datetime import datetime
-<<<<<<< HEAD
-<<<<<<< HEAD
-import json
-=======
->>>>>>> cynthia_working
-=======
->>>>>>> 8fc030dbbf10fd4555599549edb02fe0546a1348
 import os
 import json
+
 
 class FileStorage:
     """ File Storage Class """
@@ -17,15 +11,7 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-<<<<<<< HEAD
-<<<<<<< HEAD
         """ Returns the dictionary __objects"""
-=======
-        """ Returns the dictionary __objects """
->>>>>>> cynthia_working
-=======
-        """ Returns the dictionary __objects """
->>>>>>> 8fc030dbbf10fd4555599549edb02fe0546a1348
         return FileStorage.__objects
 
     def new(self, obj):
