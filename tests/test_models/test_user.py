@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
         rat = User()
         attrlist = ["email", "password", "first_name", "last_name"]
         for item in attrlist:
-            self.assertTrue("rat.{}".format(item))
+            self.assertTrue(rat.{} == "".format(item))
 
 if __name__ == "__main__":
     unittest.main()
