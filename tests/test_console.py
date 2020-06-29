@@ -629,7 +629,7 @@ class TestCommand(unittest.TestCase):
         msg = f.getvalue()[:-1]
         self.assertEqual(msg, "** no instance found **")
 
-       with patch('sys.stdout', new=StringIO()) as f:
+        with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd('BaseModel.update("{}")'.format(uid))
         msg = f.getvalue()[:-1]
         self.assertEqual(msg, "** attribute name missing **")
