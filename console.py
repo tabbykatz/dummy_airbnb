@@ -81,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if len(terms) < 3:
-            print("** attribute missing **")
+            print("** attribute name missing **")
             return
         elif len(terms) < 4:
             print("** value missing **")
