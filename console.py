@@ -56,14 +56,19 @@ class HBNBCommand(cmd.Cmd):
             # else update at id the attribute with new_value
             else:
                 terms = term.split(", ")
-                print(terms)
+                #print(terms)
                 if terms == ['']:
                     print("** instance id missing **")
+                    return
                 key = "{}.{}".format(cl_name, terms[0].strip("\""))
                 if key not in storage.all().keys():
                     print("** no instance found **")
                     return
-                if len(terms) < 3 or len(terms) < 2:
+                if len(terms) < 2:
+                    print("** attribute name missing **")
+                    return
+                if len(terms) < 3:
+                    print("** value missing **")
                     return
                 self.do_update(cl_name + " " + terms[0].strip("\"") + " " +
                                terms[1].strip("\"") + " " + terms[2])
