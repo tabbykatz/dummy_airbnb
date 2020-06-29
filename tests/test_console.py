@@ -54,11 +54,9 @@ class TestCommand(unittest.TestCase):
         """help test in console"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help")
-        string = """
-        Documented commands (type help <topic>):\n
-        ========================================\n
-        EOF  all  create  destroy  help  quit  show  update\n
-        """
+            string = "Documented commands (type help <topic>):" + "\n"
+            + "========================================" + "\n"
+            + "EOF  all  create  destroy  help  quit  show  update" + "\n"
         self.assertEqual(string, f.getvalue())
 
     def test_help_EOF(self):
@@ -145,7 +143,7 @@ class TestCommand(unittest.TestCase):
 
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("                  \n")
-        string = ""
+        string = "\n"
         self.assertEqual(string, f.getvalue())
 
     def tool_test_do_create(self, classname):
@@ -254,7 +252,7 @@ class TestCommand(unittest.TestCase):
         """let's test destroy!!!"""
         for classname in self.classes():
             self.tool_test_do_destroy(classname)
-            self.topl_test_destroy_adv(classname)
+            self.tool_test_destroy_adv(classname)
 
     def tool_test_do_destroy(self, classname):
         """a tool to help with testing destroy"""
@@ -505,8 +503,8 @@ class TestCommand(unittest.TestCase):
     def test_6_update(self):
         """might as well do them all"""
         classname = "Review"
-        attr = "give me"
-        val = "the reviews"
+        attr = "gimme"
+        val = "thereviews"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
         #  cmd = 'update {} {} {} {}'
