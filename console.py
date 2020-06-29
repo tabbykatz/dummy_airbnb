@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
             return
         terms = shlex.split(line, posix=False)
         if terms[0] not in storage.classes():
-            print("** class doesn't exit **")
+            print("** class doesn't exist **")
             return
         elif len(terms) < 2:
             print("** instance id missing **")
