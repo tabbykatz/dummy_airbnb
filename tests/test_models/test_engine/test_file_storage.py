@@ -330,7 +330,7 @@ class TestFileStorage(unittest.TestCase):
 
         cls = storage.classes()[classname]
         obj = cls()
-        storage.new(o)
+        storage.new(obj)
         key = "{}.{}".format(type(obj).__name__, obj.id)
         storage.save()
         obj.name = "labrat"
@@ -343,27 +343,27 @@ class TestFileStorage(unittest.TestCase):
 
     def test_remiss_user(self):
         """ test remiss use """
-        self.tool_test_reload_mismatch("User")
+        self.tool_test_re_miss("User")
 
     def test_remiss_state(self):
         """test remiss state """
-        self.tool_test_reload_mismatch("State")
+        self.tool_test_re_miss("State")
 
     def test_remiss_city(self):
         """test remiss city"""
-        self.tool_test_reload_mismatch("City")
+        self.tool_test_re_miss("City")
 
     def test_remiss_amenity(self):
         """ test remiss amenity """
-        self.tool_test_reload_mismatch("Amenity")
+        self.tool_test_re_miss("Amenity")
 
     def test_remiss_place(self):
         """ test reiss place """
-        self.tool_test_reload_mismatch("Place")
+        self.tool_test_re_miss("Place")
 
     def test_remiss_review(self):
         """ test remiss review """
-        self.tool_test_reload_mismatch("Review")
+        self.tool_test_re_miss("Review")
 
     def test_reload_no_args(self):
         """ no args please """
