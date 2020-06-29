@@ -13,7 +13,7 @@ This first step consists of a custom command-line interface for data management,
 ## Usage
 
 The console works both in interactive mode and non-interactive mode, much like a Unix shell.
-It prints a prompt **(hbnb)** and waits for the user for input.
+It prints the prompt **(hbnb)** and waits for the user for input.
 
 Command | Example
 ------- | -------
@@ -64,7 +64,7 @@ This allows the storage to be reloaded automatically at initialization, which re
 ## Tests
 
 All the code is tested with the **unittest** module.
-The test for the classes are in the [test_models](./tests/test_models/) folder.
+The tests for the classes are in the [test_models](./tests/test_models/) folder.
 
 ## Shoutouts
 
