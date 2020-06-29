@@ -21,7 +21,10 @@ class HBNBCommand(cmd.Cmd):
         cmd = line.split(".")[1].split("(")[0]
         term = line.split("(")[1][:-1]
 
-        if cl_name not in storage.classes():
+        if cl_name is "":
+            print("** class name missing **")
+            return
+        elif cl_name not in storage.classes():
             print("** class doesn't exist **")
             return
 
