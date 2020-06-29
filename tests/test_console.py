@@ -55,9 +55,9 @@ class TestCommand(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help")
         string = """
-        Documented commands (type help <topic>):
-        ========================================
-        EOF  all  create  destroy  help  quit  show  update
+        Documented commands (type help <topic>):\n
+        ========================================\n
+        EOF  all  create  destroy  help  quit  show  update\n
         """
         self.assertEqual(string, f.getvalue())
 
@@ -86,7 +86,7 @@ class TestCommand(unittest.TestCase):
         """test help show"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help show")
-        string = 'Prints an instance by id \n\n'
+        string = 'Prints an instance by id.\n\n'
         self.assertEqual(string, f.getvalue())
 
     def test_help_destroy(self):
@@ -140,7 +140,7 @@ class TestCommand(unittest.TestCase):
         """empty line should print newline"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("\n")
-        string = ""
+        string = "\n"
         self.assertEqual(string, f.getvalue())
 
         with patch('sys.stdout', new=StringIO()) as f:
@@ -160,7 +160,7 @@ class TestCommand(unittest.TestCase):
         self.assertTrue(uid in f.getvalue())
 
     def test_do_create(self):
-        """test using the create command in console"""""""
+        """this is a test for create"""
         for classname in self.classes():
             self.tool_test_do_create(classname)
 
