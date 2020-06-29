@@ -155,7 +155,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_quit(self, line):
-        """Use quit to exit console. """
+        """Use quit to exit console.\n"""
         return True
 
     def emptyline(self):
