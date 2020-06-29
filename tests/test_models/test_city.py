@@ -44,8 +44,9 @@ class TestCity(unittest.TestCase):
     def test_attributes(self):
         """test attributes of the city class"""
         rat = City()
-        self.assertExists(rat.name)
-        self.assertExists(rat.state_id)
+        attrlist = ["name", "state_id"]
+        for item in attrlist:
+            self.assertTrue("rat.{}".format(item))
 
 if __name__ == "__main__":
     unittest.main()
