@@ -59,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
             super().default(line)
 
     def do_update(self, line):
-        """Update an instance based on class name and id. """
+        """Update an instance based on class name and id.\n"""
         if line == "" or line is None:
             print("** class name missing **")
             return
@@ -89,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_show(self, line):
-        """Prints an instance by id """
+        """Prints an instance by id.\n"""
         if line is "" or line is None:
             print("** class name missing **")
         else:
@@ -106,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
                     print(storage.all()[key])
 
     def do_destroy(self, line):
-        """Deletes an instance based on the class name and id """
+        """Deletes an instance based on the class name and id.\n"""
         if line is "" or line is None:
             print("** class name missing **")
         else:
@@ -124,8 +124,7 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
 
     def do_all(self, line):
-        """Displays all instances, optionally, display all of a class of
-        instances."""
+        """Displays all instances, display all of a class of instances.\n"""
         if line is not "":
             terms = line.split(' ')
             if terms[0] not in storage.classes():
@@ -139,7 +138,7 @@ class HBNBCommand(cmd.Cmd):
             print(obj_list)
 
     def do_create(self, line):
-        """Creates a new instance. """
+        """Creates a new instance.\n"""
         if line == "" or line is None:
             print("** class name missing **")
         elif line not in storage.classes():
@@ -150,16 +149,16 @@ class HBNBCommand(cmd.Cmd):
             print(inst.id)
 
     def do_EOF(self, line):
-        """End-of-file input exits console. """
+        """End-of-file input exits console.\n"""
         print()
         return True
 
     def do_quit(self, line):
-        """Use quit to exit console.\n"""
+        """Quit command to exit the program\n"""
         return True
 
     def emptyline(self):
-        """Prints an empty line. """
+        """Prints an empty line.\n"""
         print()
 
 if __name__ == '__main__':
