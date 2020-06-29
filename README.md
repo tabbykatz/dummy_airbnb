@@ -68,11 +68,9 @@ The test for the classes are in the [test_models](./tests/test_models/) folder.
 
 ## Shoutouts
 
-This project was made possible through the superior power of Vim
+This project was made possible through the superior power of Vim. This README created in stackedit.io
 
-This README created in stackedit.io
-
-This pandemic is the worst
+This pandemic is the worst.
 
 ## Authors
 
