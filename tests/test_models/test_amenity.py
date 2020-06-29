@@ -41,5 +41,9 @@ class TestAmenity(unittest.TestCase):
         self.assertIsInstance(rat, Amenity)
         self.assertTrue(issubclass(type(rat), BaseModel))
 
+    def test_attributes(self):
+        """ test existence of attributes"""
+        rat = Amenity()
+        self.assertExists(rat.name)
 if __name__ == "__main__":
     unittest.main()
