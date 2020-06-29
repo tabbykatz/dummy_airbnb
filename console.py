@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
             terms = line.split(' ')
             if terms[0] not in storage.classes():
                 print("** class doesn't exist **")
-            elif len(terms) < 2:
+            elif len(terms) < 2 or terms[1] is "":
                 print("** instance id missing **")
             else:
                 key = "{}.{}".format(terms[0], terms[1])
@@ -116,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
             terms = line.split(' ')
             if terms[0] not in storage.classes():
                 print("** class doesn't exist **")
-            elif len(terms) < 2:
+            elif len(terms) < 2 or terms[1] is "":
                 print("** instance id missing **")
             else:
                 key = "{}.{}".format(terms[0], terms[1])
