@@ -14,7 +14,9 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def default(self, line):
-        """ Handle class.cmd(args) commands """
+        """Handle class.cmd(args) commands """
+        if not re.search("\.(\w+)\(", line):
+            return
         cl_name = line.split(".")[0]
         cmd = line.split(".")[1].split("(")[0]
         term = line.split("(")[1][:-1]
@@ -57,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
             super().default(line)
 
     def do_update(self, line):
-        """ Update an instance based on class name and id. """
+        """Update an instance based on class name and id. """
         if line == "" or line is None:
             print("** class name missing **")
             return
@@ -87,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_show(self, line):
-        """ Prints an instance by id """
+        """Prints an instance by id """
         if line is "" or line is None:
             print("** class name missing **")
         else:
@@ -104,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
                     print(storage.all()[key])
 
     def do_destroy(self, line):
-        """ Deletes an instance based on the class name and id """
+        """Deletes an instance based on the class name and id """
         if line is "" or line is None:
             print("** class name missing **")
         else:
@@ -122,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
 
     def do_all(self, line):
-        """ Displays all instances, optionally, display all of a class of
+        """Displays all instances, optionally, display all of a class of
         instances."""
         if line is not "":
             terms = line.split(' ')
