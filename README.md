@@ -74,6 +74,6 @@ This pandemic is the worst.
 
 ## Authors
 
+* **Tabitha O'Melay** - [github](https://github.com/tabbykatz) - [linkedin](https://www.linkedin.com/in/tabbykatz/) - [twitter](https://twitter.com/tabby__katz)
 * **Cynthia Taylor** - [github](https://github.com/cg-taylor) - [linkedin](https://www.linkedin.com/in/cynthia-taylor/) - [twitter](https://twitter.com/wholockwars)
 * **Zac Woll** - [github](https://github.com/zacwoll) - [linkedin](https://www.linkedin.com/in/zachary-woll-52021a1a1/) - [twitter](https://twitter.com/ZakWoll)
-* **Tabitha O'Melay** - [github](https://github.com/tabbykatz) - [linkedin](https://www.linkedin.com/in/tabbykatz/) - [twitter](https://twitter.com/tabby__katz)
