@@ -160,7 +160,7 @@ class TestCommand(unittest.TestCase):
         self.assertTrue(uid in f.getvalue())
 
     def test_do_create(self):
-        """test using the create command in console"""""""
+        """test using the create command in console"""
         for classname in self.classes():
             self.tool_test_do_create(classname)
 
