@@ -56,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
             # else update at id the attribute with new_value
             else:
                 terms = term.split(", ")
-                if terms is "":
+                if terms == ['']:
                     print("** instance id missing **")
                 if len(terms) < 3 or len(terms) < 2:
                     return
