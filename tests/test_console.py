@@ -54,9 +54,9 @@ class TestCommand(unittest.TestCase):
         """help test in console"""
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help")
-            string = "Documented commands (type help <topic>):" + "\n"
-            + "========================================" + "\n"
-            + "EOF  all  create  destroy  help  quit  show  update" + "\n"
+            string = "\nDocumented commands (type help <topic>):" + "\n"
+            string += "========================================" + "\n"
+            string += "EOF  all  create  destroy  help  quit  show  update\n\n"
         self.assertEqual(string, f.getvalue())
 
     def test_help_EOF(self):
@@ -612,8 +612,8 @@ class TestCommand(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(".update()")
         msg = f.getvalue()[:-1]
-        self.assertEqual(msg, "** class name missing **")
 
+        self.assertEqual(msg, "** class name missing **")
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("windows.update()")
         msg = f.getvalue()[:-1]
@@ -625,11 +625,11 @@ class TestCommand(unittest.TestCase):
         self.assertEqual(msg, "** instance id missing **")
 
         with patch('sys.stdout', new=StringIO()) as f:
-            HBNBCommand().onecmd("BaseModel.update("8675309")")
+            HBNBCommand().onecmd("BaseModel.update('8675309')")
         msg = f.getvalue()[:-1]
         self.assertEqual(msg, "** no instance found **")
 
-        with patch('sys.stdout', new=StringIO()) as f:
+       with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd('BaseModel.update("{}")'.format(uid))
         msg = f.getvalue()[:-1]
         self.assertEqual(msg, "** attribute name missing **")
