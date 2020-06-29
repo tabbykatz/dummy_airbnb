@@ -407,9 +407,7 @@ class TestCommand(unittest.TestCase):
         val = "in the trunk"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         s = f.getvalue()
@@ -427,9 +425,7 @@ class TestCommand(unittest.TestCase):
         val = "is killing me"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         string = f.getvalue()
@@ -447,9 +443,7 @@ class TestCommand(unittest.TestCase):
         val = "California"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         s = f.getvalue()
@@ -467,9 +461,7 @@ class TestCommand(unittest.TestCase):
         val = "The Golden State"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         s = f.getvalue()
@@ -487,9 +479,7 @@ class TestCommand(unittest.TestCase):
         val = "is an amenity"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         s = f.getvalue()
@@ -507,9 +497,7 @@ class TestCommand(unittest.TestCase):
         val = "thereviews"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         s = f.getvalue()
@@ -527,9 +515,7 @@ class TestCommand(unittest.TestCase):
         val = "tests"
         uid = self.create_class(classname)
         cmd = '{}.update("{}", "{}", "{}")'
-        #  cmd = 'update {} {} {} {}'
         cmd = cmd.format(classname, uid, attr, val)
-        #  print("CMD::", cmd)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         s = f.getvalue()
@@ -567,7 +553,6 @@ class TestCommand(unittest.TestCase):
 
     def tool_test_update(self, classname, uid, attr, val, quotes, func):
         """useful stuff here"""
-        #  print("QUOTES", quotes)
         FileStorage._FileStorage__objects = {}
         if os.path.isfile("file.json"):
             os.remove("file.json")
@@ -581,8 +566,6 @@ class TestCommand(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd(cmd)
         msg = f.getvalue()[:-1]
-        # print("MSG::", msg)
-        # print("CMD::", cmd)
         self.assertEqual(len(msg), 0)
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd('{}.show("{}")'.format(classname, uid))
