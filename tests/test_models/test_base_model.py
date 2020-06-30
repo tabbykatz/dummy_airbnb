@@ -12,6 +12,7 @@ import time
 import os
 import re
 
+
 class TestBaseModel(unittest.TestCase):
 
     """tests for the BaseModel class"""
@@ -34,8 +35,10 @@ class TestBaseModel(unittest.TestCase):
     """Tests for instantiation"""
     def test_instance(self):
         """making a lab rat"""
+
         rat = BaseModel()
-        self.assertEqual(str(type(rat)), "<class 'models.base_model.BaseModel'>")
+        string = "<class 'models.base_model.BaseModel'>"
+        self.assertEqual(str(type(rat)), string)
         self.assertIsInstance(rat, BaseModel)
         self.assertTrue(issubclass(type(rat), BaseModel))
 
@@ -53,7 +56,6 @@ class TestBaseModel(unittest.TestCase):
         b = BaseModel(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
         b = BaseModel(*args)
         """need to do stuff here to test this"""
-
 
     def test_datetime_creation(self):
         """checking for datetime function"""
