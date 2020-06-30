@@ -7,12 +7,12 @@
 ## Description
 
 This team project is part of the [Holberton School](https://www.holbertonschool.com/) Full-Stack Software Engineer program.
-It's the first step towards building a first full web application: an AirBnB clone.
-This first step consists of a custom command-line interface for data management, and the base classes for the storage of this data.
+It's the first step towards building our first full web application: an AirBnB clone.
+This first step consists of a custom command-line interface for data management and the base classes for the storage of this data.
 
 ## Usage
 
-The console works both in interactive mode and non-interactive mode, much like a Unix shell.
+Our console works in interactive mode and non-interactive mode, like a Unix shell.
 It prints the prompt **(hbnb)** and waits for the user for input.
 
 Command | Example
@@ -34,7 +34,7 @@ $ echo "help" | ./console.py
 
 Documented commands (type help <topic>):
 ========================================
-EOF  all  count  create  destroy  help  quit  show  update
+EOF  all  create  destroy  help  quit  show  update
 ```
 
 ## Models
@@ -55,22 +55,23 @@ File | Description | Attributes
 
 The folder [engine](./models/engine/) manages the serialization and de-serialization of all the data, following a JSON format.
 
-A FileStorage class is defined in [file_storage.py](./models/engine/file_storage.py) with methods to follow this flow:
+A FileStorage class is defined in [file_storage.py](./models/engine/file_storage.py) with methods like so:
 ```<object> -> to_dict() -> <dictionary> -> JSON dump -> <json string> -> FILE -> <json string> -> JSON load -> <dictionary> -> <object>```
 
-The [__init__.py](./models/__init__.py) file contains the instantiation of the FileStorage class called **storage**, followed by a call to the method reload() on that instance.
-This allows the storage to be reloaded automatically at initialization, which recovers the serialized data.
+The [__init__.py](./models/__init__.py) file contains the instantiation of the FileStorage class called **storage**, followed by a call to the method reload() on that instance. This allows the storage to be reloaded automatically at initialization, which recovers the serialized data.
 
 ## Tests
 
-All the code is tested with the **unittest** module.
-The tests for the classes are in the [test_models](./tests/test_models/) folder.
+All the code is tested with the **unittest** module.</br>
+The tests for the classes are in the [test_models](./tests/test_models/) folder.</br>
+Tests for File Storage are in [test_engine](./tests/test_models/test_engine).</br>
+Tests for the console itself are in [tests](./tests/).</br>
 
 ## Shoutouts
 
-This project was made possible through the superior power of Vim. This README was created in stackedit.io
-
-This pandemic is the worst.
+This project was made possible through an alliance between Vim and Emacs users. </br>
+This README was created in [stackedit.io](stackedit.io).</br>
+This pandemic is the worst.</br>
 
 ## Authors
 
