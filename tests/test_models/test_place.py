@@ -13,6 +13,7 @@ from models import storage
 from models.base_model import BaseModel
 import uuid
 
+
 class TestPlace(unittest.TestCase):
 
     """class containing tests for Place class"""
@@ -43,11 +44,17 @@ class TestPlace(unittest.TestCase):
     def test_attr(self):
         """check the attributes exist"""
         rat = Place()
-        attrlist = ["city_id", "user_id", "name", "description", "number_rooms",
-                "number_bathrooms", "max_guest", "price_by_night", "latitude",
-               "longitude", "amenity_ids"]
-        for item in attrlist:
-            self.assertTrue("rat.{}".format(item))
+        self.assertTrue(rat.city_id == "")
+        self.assertTrue(rat.user_id == "")
+        self.assertTrue(rat.name == "")
+        self.assertTrue(rat.description == "")
+        self.assertTrue(rat.number_rooms == 0)
+        self.assertTrue(rat.number_bathrooms == 0)
+        self.assertTrue(rat.max_guest == 0)
+        self.assertTrue(rat.price_by_night == 0)
+        self.assertTrue(rat.latitude == 0.0)
+        self.assertTrue(rat.longitude == 0.0)
+        self.assertTrue(rat.amenity_ids == [])
 
 if __name__ == "__main__":
     unittest.main()
