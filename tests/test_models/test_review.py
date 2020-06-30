@@ -42,10 +42,11 @@ class TestReview(unittest.TestCase):
         self.assertTrue(issubclass(type(rat), BaseModel))
 
     def test_attr(self):
-        """probably does nothing lol"""
-        attrlist = ["place_id", "user_id", "text"]
-        for item in attrlist:
-            self.assertTrue("rat.{}".format(item))
+        """check attribute existence"""
+        rat = Review()
+        self.assertTrue(rat.place_id == "")
+        self.assertTrue(rat.user_id == "")
+        self.assertTrue(rat.text == "")
 
 if __name__ == "__main__":
     unittest.main()
