@@ -82,6 +82,9 @@ class TestBaseModel(unittest.TestCase):
     def test_str_method(self):
         """test the str method"""
         rat = BaseModel()
+        ratstr = "[{}] ({}) {}".format("BaseModel",
+                                       rat.id, rat.__dict__)
+        self.assertEqual(rat.__str__(), ratstr)
         """do stuff here """
 
     def test_to_dict(self):
