@@ -42,11 +42,12 @@ class TestUser(unittest.TestCase):
         self.assertTrue(issubclass(type(rat), BaseModel))
 
     def test_attr(self):
-        """check it out this test is jank"""
+        """check it out this test is no longer jank"""
         rat = User()
-        attrlist = ["email", "password", "first_name", "last_name"]
-        for item in attrlist:
-            self.assertTrue(getattr(rat, item) == "")
+        self.assertTrue(rat.email == "")
+        self.assertTrue(rat.password == "")
+        self.assertTrue(rat.first_name == "")
+        self.assertTrue(rat.last_name == "")
 
 if __name__ == "__main__":
     unittest.main()
